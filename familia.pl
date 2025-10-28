@@ -5,19 +5,25 @@ mulher(eva).
 mulher(clo).
 mulher(lia).
 mulher(gal).
+mulher(maria).
 homem(ivo).
 homem(gil).
 homem(rai).
 homem(ary).
 homem(noe).
+homem(thor).
 % genitor(pai | mae, filho | filha).
 genitor(ana, eva).
 genitor(ivo, eva).
+genitor(ana, maria).
+genitor(ivo, maria).
 genitor(bia, rai).
 genitor(gil, rai).
 genitor(bia, clo).
 genitor(gil, clo).
 genitor(bia, ary).
+genitor(gil, thor).
+genitor(bia, thor).
 genitor(gil, ary).
 genitor(eva, noe).
 genitor(rai, noe).
@@ -27,7 +33,10 @@ genitor(lia, gal).
 % regras
 pai(X, Y) :- homem(X), genitor(X, Y).
 mae(X, Y) :- mulher(X), genitor(X, Y).
-avo(X, Y) :- genitor(X, Z), genitor(Z, Y).
+casal(X, Y) :- genitor(X, Z), genitor(Y, Z), X \= Y.
+avos(X, Y) :- genitor(X, Z), genitor(Z, Y).
+avoh(X, Y) :- pai(X, Z), genitor(Z, Y).
+avom(X, Y) :- mae(X, Z), genitor(Z, Y).
 filho(X, Y) :- genitor(Y, X), homem(X).
 filha(X, Y) :- genitor(Y, X), mulher(X).
 irmao(X, Y) :- homem(X), 
@@ -56,3 +65,5 @@ tia(X, Y) :-
     genitor(A, Y),
     ( irma(X, A);
     irmao(B, A), pai(B, C), mae(X, C) ).
+feliz(X) :- genitor(X, _).
+familia(X, Y, Z) :- pai(X, Z), mae(Y, Z).
