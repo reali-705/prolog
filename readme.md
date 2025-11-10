@@ -4,7 +4,7 @@ Este repositório armazena os exercícios e projetos desenvolvidos na disciplina
 
 ## 🤖 Tecnologias Utilizadas
 
-* **Linguagem:** [Prolog](https://www.swi-prolog.org/) (utilizando a implementação **SWI-Prolog**)
+- **Linguagem:** [Prolog](https://www.swi-prolog.org/) (utilizando a implementação **SWI-Prolog**)
 
 ## 🗂️ Conteúdo
 
@@ -12,25 +12,15 @@ Atualmente, o repositório contém os seguintes arquivos:
 
 ### 1. [`familia.pl`](./familia.pl)
 
-Uma base de conhecimento que modela uma árvore genealógica. O arquivo define fatos sobre os indivíduos e suas relações de genitor, e implementa um conjunto robusto de regras para inferir parentescos complexos.
+Primeiro contato com Prolog. Uma base de conhecimento que modela uma árvore genealógica, definindo fatos sobre indivíduos e implementando regras para inferir parentescos.
 
-**Fatos Definidos:**
-* `homem/1`
-* `mulher/1`
-* `genitor/2`
+### 2. [`atividade1.pl`](./atividade1.pl)
 
-**Regras Implementadas:**
-* `pai/2`
-* `mae/2`
-* `avo/2`
-* `filho/2`
-* `filha/2`
-* `irmao/2` (irmãos completos, mesmo pai e mesma mãe)
-* `irma/2` (irmãs completas)
-* `meio_irmao/2` (irmãos por parte de apenas um genitor)
-* `meio_irma/2` (irmãs por parte de apenas um genitor)
-* `tio/2` (inclui tios de sangue e tios por afinidade/casamento)
-* `tia/2` (inclui tias de sangue e tias por afinidade/casamento)
+Atividade em sala para criação de regras, abordando uma cadeia alimentar e a relação entre alunos e professores em disciplinas.
+
+### 3. [`fibonacci.pl`](./fibonacci.pl)
+
+Atividade de introdução à recursividade em Prolog, com uma implementação otimizada para calcular a sequência de Fibonacci.
 
 ---
 
@@ -44,7 +34,7 @@ Uma base de conhecimento que modela uma árvore genealógica. O arquivo define f
     ```
 4.  Dentro do interpretador, carregue (consulte) a base de conhecimento:
     ```prolog
-    ?- consult('familia.pl').
+    ?- consult('nome_do_arquivo.pl').
     true.
     ```
 5.  Pronto! Agora você pode fazer consultas à base de conhecimento.
